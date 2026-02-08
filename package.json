@@ -11,7 +11,8 @@
     "check:write": "biome check --write ./src",
     "format": "biome format .",
     "format:write": "biome format --write ./src",
-    "lint": "biome lint ./src"
+    "lint": "biome lint ./src",
+    "typecheck": "tsc --noEmit"
   },
   "keywords": ["google-calendar", "chrome-extension"],
   "author": "minagishl",
