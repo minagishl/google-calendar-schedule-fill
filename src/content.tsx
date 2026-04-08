@@ -3,6 +3,7 @@ import type React from "react";
 import { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import browser from "webextension-polyfill";
+
 import { Button } from "./components/Button";
 import { icsToJson } from "./utils/icsToJson";
 import type { ICalEvent } from "./utils/icsToJson";

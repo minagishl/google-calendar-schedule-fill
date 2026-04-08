@@ -38,7 +38,7 @@ You can install this extension from the [Chrome Web Store](https://chromewebstor
 - Vite for fast development and optimized builds
 - Chrome Extension Manifest V3 compliant
 - Uses ical.js for reliable calendar data parsing
-- Biome for consistent code formatting and linting
+- [oxlint](https://oxc.rs/docs/guide/usage/linter.html) and [oxfmt](https://oxc.rs/docs/guide/usage/formatter.html) for linting and formatting
 
 ## Browser Compatibility
 

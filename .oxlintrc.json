@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "env": {
+    "browser": true,
+    "es2022": true
+  },
+  "globals": {
+    "chrome": "readonly"
+  },
+  "plugins": ["eslint", "typescript", "unicorn", "oxc", "react"],
+  "rules": {
+    "react/react-in-jsx-scope": "off"
+  }
+}
