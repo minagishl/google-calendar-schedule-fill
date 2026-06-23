@@ -6,6 +6,14 @@ const WEEKDAY_MAP: Record<string, number> = {
   Thu: 4,
   Fri: 5,
   Sat: 6,
+  // Japanese single-kanji weekday labels (日〜土)
+  日: 0,
+  月: 1,
+  火: 2,
+  水: 3,
+  木: 4,
+  金: 5,
+  土: 6,
 };
 
 export interface TappySlot {
@@ -46,12 +54,27 @@ export function parseTappyDateColumn(
   return formatLocalDateKey(new Date(year, month - 1, day));
 }
 
+function parseWeekdayFromLabel(label: string): number | null {
+  const trimmed = label.trim();
+  const direct = WEEKDAY_MAP[trimmed];
+  if (direct !== undefined) {
+    return direct;
+  }
+
+  const japaneseMatch = trimmed.match(/^([日月火水木金土])曜(日)?$/);
+  if (japaneseMatch) {
+    return WEEKDAY_MAP[japaneseMatch[1]] ?? null;
+  }
+
+  return null;
+}
+
 export function parseTappyWeekdayColumn(
   label: string,
   referenceDate = new Date()
 ): string | null {
-  const targetDay = WEEKDAY_MAP[label.trim()];
-  if (targetDay === undefined) {
+  const targetDay = parseWeekdayFromLabel(label);
+  if (targetDay === null) {
     return null;
   }
 
