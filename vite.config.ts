@@ -6,7 +6,8 @@ const manifest = defineManifest({
   manifest_version: 3,
   name: "Google Calendar Tonton",
   version: "1.4.0",
-  description: "Auto-send Tonton's schedule from Google Calendar.",
+  description:
+    "Auto-send your schedule from Google Calendar to Tonton and Tappy.",
   permissions: ["storage", "unlimitedStorage"],
   host_permissions: ["https://calendar.google.com/*"],
   action: {
@@ -37,6 +38,13 @@ const manifest = defineManifest({
       matches: ["https://tonton.amaneku.com/list.php?id=*"],
       js: ["src/content.tsx"],
     },
+    {
+      matches: [
+        "http://tap-py.com/*/register",
+        "http://www.tap-py.com/*/register",
+      ],
+      js: ["src/content-tappy.tsx"],
+    },
   ],
 });
 
@@ -47,6 +55,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         content: "src/content.tsx",
+        "content-tappy": "src/content-tappy.tsx",
         background: "src/background.ts",
         options: "src/options.html",
       },
