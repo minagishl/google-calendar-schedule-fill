@@ -61,7 +61,7 @@ While this extension is primarily tested on Chrome, it uses [webextension-polyfi
 1. Clone the repository and install dependencies:
 
    ```bash
-   git clone https://github.com/minagishl/google-calendar-schedule-fill
+   git clone https://github.com/minagishl/google-calendar-schedule-fill.git
    cd google-calendar-schedule-fill
    bun install
    ```
