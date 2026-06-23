@@ -1,6 +1,6 @@
 {
   "name": "google-calendar-schedule-fill",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Automatically fill your availability on scheduling sites from Google Calendar.",
   "type": "module",
   "scripts": {
