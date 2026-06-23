@@ -1,7 +1,7 @@
 {
-  "name": "google-calendar-tonton",
+  "name": "google-calendar-schedule-fill",
   "version": "1.4.0",
-  "description": "Auto-send Tonton’s schedule from Google Calendar.",
+  "description": "Automatically fill your availability on scheduling sites from Google Calendar.",
   "type": "module",
   "scripts": {
     "dev": "vite",

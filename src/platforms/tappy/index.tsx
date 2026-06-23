@@ -1,4 +1,4 @@
 import { mountContentScript } from "../../shared/contentScript/mount";
 import { applyCalendarEvents } from "./applyCalendar";
 
-mountContentScript("google-calendar-tonton-tappy", applyCalendarEvents);
+mountContentScript("calendar-schedule-fill-tappy", applyCalendarEvents);

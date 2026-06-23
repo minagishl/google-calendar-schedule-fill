@@ -1,13 +1,13 @@
-import { defineConfig } from "vite";
 import { crx, defineManifest } from "@crxjs/vite-plugin";
 import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
 
 const manifest = defineManifest({
   manifest_version: 3,
-  name: "Google Calendar Tonton",
+  name: "Google Calendar Schedule Fill",
   version: "1.4.0",
   description:
-    "Auto-send your schedule from Google Calendar to Tonton and Tappy.",
+    "Automatically fill your availability on scheduling sites from Google Calendar.",
   permissions: ["storage", "unlimitedStorage"],
   host_permissions: ["https://calendar.google.com/*"],
   action: {
@@ -17,7 +17,7 @@ const manifest = defineManifest({
       "38": "src/assets/icon38.png",
       "128": "src/assets/icon128.png",
     },
-    default_title: "Google Calendar Tonton",
+    default_title: "Google Calendar Schedule Fill",
   },
   options_ui: {
     page: "src/options.html",

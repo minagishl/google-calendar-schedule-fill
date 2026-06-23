@@ -1,6 +1,11 @@
-# Google Calendar Tonton
+# Google Calendar Schedule Fill
 
-A Chrome extension that automatically sends [Tonton](https://tonton.amaneku.com/)'s schedule from Google Calendar.
+A Chrome extension that automatically fills your availability on scheduling sites from Google Calendar.
+
+Supported sites:
+
+- [Tonton](https://tonton.amaneku.com/)
+- [Tappy](http://tap-py.com/)
 
 ## Features
 
@@ -28,9 +33,9 @@ You can install this extension from the [Chrome Web Store](https://chromewebstor
 
 ## Usage
 
-1. Open Google Calendar
-2. The extension will automatically process the calendar data
-3. Schedule information will be extracted and processed according to the configuration
+1. Configure your Google Calendar ICS URL in the extension settings
+2. Open a supported scheduling site (Tonton or Tappy)
+3. Click "Apply Calendar" to fill your availability based on your calendar
 
 ## Technical Details
 
@@ -48,27 +53,29 @@ While this extension is primarily tested on Chrome, it uses [webextension-polyfi
 
 ### Prerequisites
 
-* Node.js 20 or higher
-* Bun package manager
+- Node.js 20 or higher
+- Bun package manager
 
 ### Development Setup
 
 1. Clone the repository and install dependencies:
-    ```bash
-    git clone https://github.com/minagishl/google-calendar-tonton.git
-    cd google-calendar-tonton
-    bun install
-    ```
+
+   ```bash
+   git clone https://github.com/minagishl/google-calendar-schedule-fill
+   cd google-calendar-schedule-fill
+   bun install
+   ```
 
 2. Start development mode:
-    ```bash
-    bun run dev
-    ```
+
+   ```bash
+   bun run dev
+   ```
 
 3. Build for production:
-    ```bash
-    bun run build
-    ```
+   ```bash
+   bun run build
+   ```
 
 ## License
 

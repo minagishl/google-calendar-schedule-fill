@@ -233,7 +233,7 @@ function Options() {
 
   return (
     <div style={{ padding: "20px", maxWidth: "600px", margin: "0 auto" }}>
-      <h1>Google Calendar Tonton - Settings</h1>
+      <h1>Google Calendar Schedule Fill - Settings</h1>
       <div style={{ marginBottom: "20px" }}>
         <label
           htmlFor="calendar-urls"
