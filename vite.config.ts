@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 const manifest = defineManifest({
   manifest_version: 3,
   name: "Google Calendar Schedule Fill",
-  version: "1.5.0",
+  version: "1.5.1",
   description:
     "Automatically fill your availability on scheduling sites from Google Calendar.",
   permissions: ["storage", "unlimitedStorage"],

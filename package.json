@@ -1,7 +1,13 @@
 {
   "name": "google-calendar-schedule-fill",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Automatically fill your availability on scheduling sites from Google Calendar.",
+  "keywords": [
+    "chrome-extension",
+    "google-calendar"
+  ],
+  "license": "MIT",
+  "author": "minagishl",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -15,9 +21,13 @@
     "lint:fix": "oxlint --fix ./src",
     "typecheck": "tsc --noEmit"
   },
-  "keywords": ["google-calendar", "chrome-extension"],
-  "author": "minagishl",
-  "license": "MIT",
+  "dependencies": {
+    "ical.js": "^2.2.1",
+    "lucide-react": "^1.7.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "webextension-polyfill": "^0.12.0"
+  },
   "devDependencies": {
     "@crxjs/vite-plugin": "2.7.0",
     "@types/chrome": "0.1.39",
@@ -30,12 +40,5 @@
     "terser": "^5.46.1",
     "typescript": "6.0.2",
     "vite": "7.3.1"
-  },
-  "dependencies": {
-    "ical.js": "^2.2.1",
-    "lucide-react": "^1.7.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "webextension-polyfill": "^0.12.0"
   }
 }
