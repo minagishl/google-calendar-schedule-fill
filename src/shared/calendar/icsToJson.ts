@@ -102,7 +102,6 @@ export function icsToJson(
 ): ICalEvent[] {
   const cacheEntry = getCalendarCacheEntry(icsData);
 
-  // Default date range: 30 days from today
   const rangeStart = startDate || new Date();
   const rangeEnd = endDate || new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
   const rangeStartTime = rangeStart.getTime();
@@ -121,9 +120,7 @@ export function icsToJson(
   for (const event of events) {
     const icalEvent = new ICAL.Event(event);
 
-    // Check if this is a recurring event
     if (icalEvent.isRecurring()) {
-      // Expand recurring events within the date range
       const iterator = icalEvent.iterator();
       let occurrence = iterator.next();
       const duration = icalEvent.endDate.subtractDate(icalEvent.startDate);
@@ -132,12 +129,10 @@ export function icsToJson(
         const occurrenceDate = occurrence.toJSDate();
         const occurrenceStart = occurrenceDate.getTime();
 
-        // Stop if we've gone past the end date
         if (occurrenceStart > rangeEndTime) {
           break;
         }
 
-        // Only include occurrences within our date range
         if (occurrenceStart >= rangeStartTime) {
           const occurrenceEnd = occurrence.clone();
           occurrenceEnd.addDuration(duration);
@@ -165,12 +160,10 @@ export function icsToJson(
         occurrence = iterator.next();
       }
     } else {
-      // Handle non-recurring events
       const eventStartDate = icalEvent.startDate.toJSDate();
       const eventEndDate = icalEvent.endDate.toJSDate();
       const eventStartTime = eventStartDate.getTime();
 
-      // Only include events within our date range
       if (eventStartTime >= rangeStartTime && eventStartTime <= rangeEndTime) {
         const startDateIso = eventStartDate.toISOString();
         const dateKey = startDateIso.split("T")[0];

@@ -2,9 +2,9 @@ import { useCallback, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import browser from "webextension-polyfill";
 
-import { Button } from "./components/Button";
-import { icsToJson } from "./utils/icsToJson";
-import type { ICalEvent } from "./utils/icsToJson";
+import { icsToJson } from "./shared/calendar/icsToJson";
+import type { ICalEvent } from "./shared/calendar/icsToJson";
+import { Button } from "./shared/ui/Button";
 
 interface CalendarSource {
   url: string;

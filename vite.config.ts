@@ -36,14 +36,14 @@ const manifest = defineManifest({
   content_scripts: [
     {
       matches: ["https://tonton.amaneku.com/list.php?id=*"],
-      js: ["src/content.tsx"],
+      js: ["src/platforms/tonton/index.tsx"],
     },
     {
       matches: [
         "http://tap-py.com/*/register",
         "http://www.tap-py.com/*/register",
       ],
-      js: ["src/content-tappy.tsx"],
+      js: ["src/platforms/tappy/index.tsx"],
     },
   ],
 });
@@ -54,8 +54,8 @@ export default defineConfig({
     minify: "terser",
     rollupOptions: {
       input: {
-        content: "src/content.tsx",
-        "content-tappy": "src/content-tappy.tsx",
+        "platforms/tonton": "src/platforms/tonton/index.tsx",
+        "platforms/tappy": "src/platforms/tappy/index.tsx",
         background: "src/background.ts",
         options: "src/options.html",
       },
